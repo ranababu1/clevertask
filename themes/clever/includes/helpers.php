@@ -46,3 +46,83 @@ function case_study_cpt() {
     ));
 }
 add_action('init', 'case_study_cpt');
+
+function resources_cpt() {
+    register_post_type('resource', array(
+        'labels' => array(
+            'name'               => 'Resources',
+            'singular_name'      => 'Resource',
+            'add_new'            => 'Add New Resource',
+            'add_new_item'       => 'Add New Resource',
+            'edit_item'          => 'Edit Resource',
+            'new_item'           => 'New Resource',
+            'view_item'          => 'View Resource',
+            'search_items'       => 'Search Resources',
+            'not_found'          => 'No Resources Found',
+            'not_found_in_trash' => 'No Resources found in Trash',
+            'parent_item_colon'  => '',
+            'menu_name'          => 'Resources',
+        ),
+        'public'            => true,
+        'has_archive'       => true,
+        'show_ui'           => true,
+        'show_in_menu'      => true,
+        'show_in_rest'      => true, 
+        'supports'          => array('title', 'editor', 'thumbnail', 'custom-fields'),
+        'rewrite'           => array('slug' => 'resources'),
+        'hierarchical'      => false,
+        'taxonomies'        => array('resource_type'), 
+    ));
+
+    $args = array(
+        'hierarchical' => true, 
+        'labels' => array(
+            'name'              => 'Resource Types',
+            'singular_name'     => 'Resource Type',
+            'search_items'      => 'Search Resource Types',
+            'all_items'         => 'All Resource Types',
+            'parent_item'       => 'Parent Resource Type',
+            'parent_item_colon' => 'Parent Resource Type:',
+            'edit_item'         => 'Edit Resource Type',
+            'update_item'       => 'Update Resource Type',
+            'add_new_item'      => 'Add New Resource Type',
+            'new_item_name'     => 'New Resource Type Name',
+            'menu_name'         => 'Resource Type',
+        ),
+        'show_ui'          => true,
+        'show_in_rest'     => true, 
+        'query_var'        => true,
+        'rewrite'          => array('slug' => 'resource-type'),
+    );
+    register_taxonomy('resource_type', 'resource', $args);
+}
+add_action('init', 'resources_cpt');
+
+
+function partners_cpt() {
+    register_post_type('partner', array(
+        'labels' => array(
+            'name'               => 'Partners',
+            'singular_name'      => 'Partner',
+            'add_new'            => 'Add New Partner',
+            'add_new_item'       => 'Add New Partner',
+            'edit_item'          => 'Edit Partner',
+            'new_item'           => 'New Partner',
+            'view_item'          => 'View Partner',
+            'search_items'       => 'Search Partners',
+            'not_found'          => 'No Partners Found',
+            'not_found_in_trash' => 'No Partners found in Trash',
+            'parent_item_colon'  => '',
+            'menu_name'          => 'Partners',
+        ),
+        'public'            => true,
+        'has_archive'       => true,
+        'show_ui'           => true,
+        'show_in_menu'      => true,
+        'show_in_rest'      => true, 
+        'supports'          => array('title', 'editor', 'thumbnail', 'custom-fields'),
+        'rewrite'           => array('slug' => 'partners'),
+        'hierarchical'      => false,
+    ));
+}
+add_action('init', 'partners_cpt');
