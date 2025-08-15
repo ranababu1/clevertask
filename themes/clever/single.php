@@ -1,40 +1,38 @@
-<?php
-/**
- * The template for displaying all single posts
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
- *
- * @package clevertask
- */
+<?php get_header(); ?>
 
-get_header();
-?>
+<article class="single-post">
+    <div class="container">
+        <?php while (have_posts()) : the_post(); ?>
+            <header class="entry-header">
+                <h1 class="entry-title"><?php the_title(); ?></h1>
+                <?php clever_post_meta(); ?>
+            </header>
+            
+            <div class="entry-content">
+                <?php the_content(); ?>
+                
+                <?php wp_link_pages([
+                    'before' => '<div class="page-links">' . esc_html__('Pages:', 'clever'),
+                    'after' => '</div>',
+                ]); ?>
+            </div>
+            
+            <footer class="entry-footer">
+                <?php if (has_tag()) : ?>
+                    <div class="post-tags">
+                        <?php the_tags('<span class="tags-label">' . __('Tags:', 'clever') . '</span> ', ', ', ''); ?>
+                    </div>
+                <?php endif; ?>
+            </footer>
+            
+            <?php 
+            if (comments_open() || get_comments_number()) :
+                comments_template();
+            endif;
+            ?>
+            
+        <?php endwhile; ?>
+    </div>
+</article>
 
-	<main id="primary" class="site-main">
-
-		<?php
-		while ( have_posts() ) :
-			the_post();
-
-			get_template_part( 'template-parts/content', get_post_type() );
-
-			the_post_navigation(
-				array(
-					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'clever' ) . '</span> <span class="nav-title">%title</span>',
-					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'clever' ) . '</span> <span class="nav-title">%title</span>',
-				)
-			);
-
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
-
-		endwhile; // End of the loop.
-		?>
-
-	</main><!-- #main -->
-
-<?php
-get_sidebar();
-get_footer();
+<?php get_footer(); ?>
