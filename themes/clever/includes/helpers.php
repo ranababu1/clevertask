@@ -126,3 +126,20 @@ function partners_cpt() {
     ));
 }
 add_action('init', 'partners_cpt');
+
+add_filter('use_block_editor_for_post', '__return_false', 10);
+add_filter('use_block_editor_for_post_type', '__return_false', 10);
+add_filter('use_widgets_block_editor', '__return_false');
+remove_action('wp_enqueue_scripts', 'wp_common_block_scripts_and_styles');
+remove_action('wp_enqueue_scripts', 'wp_enqueue_editor');
+remove_action('enqueue_block_assets', 'wp_common_block_scripts_and_styles');
+remove_action('enqueue_block_editor_assets', 'wp_enqueue_editor');
+add_action('wp_enqueue_scripts', function() {
+    wp_dequeue_style('wp-block-library');  
+    wp_dequeue_style('wp-block-library-theme'); 
+    wp_dequeue_style('wc-blocks-style'); 
+    wp_dequeue_script('wp-blocks');  
+    wp_dequeue_script('wp-element');  
+    wp_dequeue_script('wp-editor');  
+}, 100);
+
