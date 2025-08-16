@@ -1,2 +1,13 @@
-wp-content/plugins/*
+# Ignore everything in wp-content
+wp-content/*
+
+# Allow syncing of themes
+!wp-content/themes/
+
+# Allow syncing of carousel plugin only
 !wp-content/plugins/carousel/
+
+# Ignore all other plugins
+wp-content/plugins/*
+
+.DS_Store
