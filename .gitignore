@@ -1,13 +1,15 @@
-# Ignore everything in wp-content
-wp-content/*
+# Ignore everything
+*
 
-# Allow syncing of themes
-!wp-content/themes/
+# But not these directories
+!themes/
+!plugins/
 
-# Allow syncing of carousel plugin only
-!wp-content/plugins/carousel/
+# Ignore all plugin subfolders
+plugins/*
 
-# Ignore all other plugins
-wp-content/plugins/*
+# But allow this specific plugin
+!plugins/simple-logo-slider/
 
+# macOS system file
 .DS_Store
