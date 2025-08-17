@@ -1,0 +1,15 @@
+# Ignore everything
+*
+
+# But not these directories
+!themes/
+!plugins/
+
+# Ignore all plugin subfolders
+plugins/*
+
+# But allow this specific plugin
+!plugins/simple-logo-slider/
+
+# macOS system file
+.DS_Store
