@@ -71,7 +71,7 @@ function resources_cpt() {
         'supports'          => array('title', 'editor', 'thumbnail', 'custom-fields'),
         'rewrite'           => array('slug' => 'resources'),
         'hierarchical'      => false,
-        'taxonomies'        => array('resource_type'), 
+        'taxonomies'        => array('resource_type', 'post_tag'), 
     ));
 
     $args = array(

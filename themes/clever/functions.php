@@ -35,7 +35,7 @@ add_action('after_setup_theme', 'clever_theme_setup');
 function clever_theme_assets() {
     wp_enqueue_style(
         'clever-main-style',
-        get_template_directory_uri() . '/assets/css/main.css',
+        get_template_directory_uri() . '/style.css',
         [],
         CLEVER_THEME_VERSION
     );

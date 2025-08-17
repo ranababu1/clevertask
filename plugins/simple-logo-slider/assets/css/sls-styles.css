@@ -2,11 +2,25 @@
     --sls-speed: 20s;
     --sls-gap: 30px;
     --sls-width: 200px;
-    
+
     width: 100%;
     overflow: hidden;
     margin: 20px 0;
     position: relative;
+}
+
+.sls-logo-h2 {
+    color: #b5bac2;
+    font-size: 16px;
+    text-align: center;
+    padding: 35px 0;
+}
+
+
+.sls-logo-slider-section {
+    border-top-left-radius: 80px;
+    border-top-right-radius: 80px;
+    margin-top: -5rem;
 }
 
 .sls-slider-track {
@@ -37,6 +51,7 @@
     0% {
         transform: translateX(0);
     }
+
     100% {
         transform: translateX(calc(-50% - var(--sls-gap)/2));
     }

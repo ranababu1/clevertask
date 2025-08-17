@@ -49,10 +49,12 @@ class Slider_Shortcode {
 
     ob_start();
     ?>
+    <section class="sls-logo-slider-section">
     <div class="sls-logo-slider" 
          data-speed="<?php echo esc_attr($atts['speed']); ?>"
          data-gap="<?php echo esc_attr($atts['gap']); ?>"
          data-width="<?php echo esc_attr($atts['width']); ?>">
+         <h2 class="sls-logo-h2">MADE TO SCALE WITH COMPANIES OF ALL SIZES</h2>
         <div class="sls-slider-track">
             <?php 
             while ($query->have_posts()) : $query->the_post();
@@ -69,6 +71,7 @@ class Slider_Shortcode {
             ?>
         </div>
     </div>
+    </section>
     <?php
     return ob_get_clean();
 }
