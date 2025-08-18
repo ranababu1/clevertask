@@ -80,7 +80,10 @@ get_header();
           <a class="story" href="#pizza-hut">
             <div class="logo"><img src="/wp-content/themes/clever/assets/images/pizza.webp" alt="Pizza Hut logo"></div>
             <div class="quote">“We’ve been really impressed with how Braze has enabled us to advance our customer communication strategies across email, SMS and mobile channels. The cross channel integrations and targeting capabilities continue to be crucial as we look forward to 2021 and beyond. We are honored to be Braze’s Customer of the Year!”</div>
-            <div class="person"><span class="name">Victoria Mitchell</span><span class="role">Manager of CRM Channel Strategy at Pizza Hut</span></div>
+            <div class="person">
+              <span class="name">Victoria Mitchell</span>
+              <span class="role">Manager of CRM Channel Strategy at Pizza Hut</span>
+            </div>
             <div class="photo"><img src="/wp-content/themes/clever/assets/images/pizza-story.webp" alt=""></div>
           </a>
           <div class="metrics">
@@ -93,10 +96,10 @@ get_header();
       <div class="panel" data-id="simplify" role="tabpanel" hidden>
         <div class="grid">
           <a class="story" href="#bees">
-            <div class="logo"><img src="assets/logo.svg" alt="BEES logo"></div>
+            <div class="logo"><img src="/wp-content/themes/clever/assets/images/bees.webp" alt="BEES logo"></div>
             <div class="quote">“With Braze, we ensure customers have meaningful access to individually tailored updates on the products they order, creating a better, more personalized brand experience while reducing the burden on our support team.”</div>
             <div class="person"><span class="name">Jason Feldman</span><span class="role">Global Director, Digital Communications, BEES</span></div>
-            <div class="photo"><img src="assets/photo.png" alt=""></div>
+            <div class="photo"><img src="/wp-content/themes/clever/assets/images/bees-story.webp" alt=""></div>
           </a>
           <div class="metrics">
             <div class="metric"><span class="value">15%</span><span class="label">Decrease in support tickets</span></div>
@@ -107,10 +110,10 @@ get_header();
       <div class="panel" data-id="silos" role="tabpanel" hidden>
         <div class="grid">
           <a class="story" href="#virgin">
-            <div class="logo"><img src="assets/logo.svg" alt="Virgin Red logo"></div>
+            <div class="logo"><img src="/wp-content/themes/clever/assets/images/virgin.webp" alt="Virgin Red logo"></div>
             <div class="quote">“We brought in Braze to level up our customer engagement game. Braze helped us leverage the data we already have and drive engagement and acquisition at a speed we could not dream about before.”</div>
             <div class="person"><span class="name">Oksana Kovalenko</span><span class="role">Head of Data Product at Virgin Red</span></div>
-            <div class="photo"><img src="assets/photo.png" alt=""></div>
+            <div class="photo"><img src="/wp-content/themes/clever/assets/images/virgin-story.webp" alt=""></div>
           </a>
           <div class="metrics">
             <div class="metric"><span class="value">+7K</span><span class="label">Click-through during IP warmup</span></div>
@@ -122,10 +125,10 @@ get_header();
       <div class="panel" data-id="love" role="tabpanel" hidden>
         <div class="grid">
           <a class="story" href="#hugosave">
-            <div class="logo"><img src="assets/logo.svg" alt="Hugosave logo"></div>
+            <div class="logo"><img src="/wp-content/themes/clever/assets/images/hugosave.webp" alt="Hugosave logo"></div>
             <div class="quote">“Braze is a very important partner in the execution of our engagement and gamification strategies.”</div>
             <div class="person"><span class="name">Braham Djidjelli</span><span class="role">Co-Founder, CPO at Hugosave</span></div>
-            <div class="photo"><img src="assets/photo.png" alt=""></div>
+            <div class="photo"><img src="/wp-content/themes/clever/assets/images/hugosave-story.webp" alt=""></div>
           </a>
           <div class="metrics">
             <div class="metric"><span class="value">300%</span><span class="label">Increase in clients opening full accounts</span></div>
