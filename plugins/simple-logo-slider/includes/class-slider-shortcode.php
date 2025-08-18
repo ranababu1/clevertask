@@ -49,6 +49,7 @@ class Slider_Shortcode {
 
     ob_start();
     ?>
+
     <section class="sls-logo-slider-section">
     <div class="sls-logo-slider" 
          data-speed="<?php echo esc_attr($atts['speed']); ?>"
@@ -72,6 +73,7 @@ class Slider_Shortcode {
         </div>
     </div>
     </section>
+    
     <?php
     return ob_get_clean();
 }

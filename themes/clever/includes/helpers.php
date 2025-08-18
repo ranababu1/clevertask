@@ -143,3 +143,25 @@ add_action('wp_enqueue_scripts', function() {
     wp_dequeue_script('wp-editor');  
 }, 100);
 
+
+function allow_svg($mimes) {
+    $mimes['svg'] = 'image/svg+xml';
+    $mimes['svgz'] = 'image/svg+xml';    
+    return $mimes;
+}
+add_filter('upload_mimes', 'allow_svg');
+
+function sanitize_svg_upload($file) {
+    if ($file['type'] === 'image/svg+xml') {
+        if (function_exists('svg_sanitizer')) {
+            $sanitized_file = svg_sanitizer($file['tmp_name']);
+            if ($sanitized_file) {
+                $file['tmp_name'] = $sanitized_file;
+            } else {
+                $file['error'] = 'Invalid SVG file.';
+            }
+        }
+    }
+    return $file;
+}
+add_filter('wp_handle_upload_prefilter', 'sanitize_svg_upload');
