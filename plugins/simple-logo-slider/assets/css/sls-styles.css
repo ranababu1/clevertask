@@ -57,3 +57,20 @@
         transform: translateX(calc(-50% - var(--sls-gap)/2));
     }
 }
+
+
+@media (max-width: 768px) {
+
+  .sls-logo-h2 {
+    padding-inline: 4rem;
+
+  }
+
+  .sls-logo-slider-section,
+  .sls-logo-slider {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    padding-block: 2rem;
+  }
+
+}
