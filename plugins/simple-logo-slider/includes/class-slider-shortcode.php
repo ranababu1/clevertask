@@ -7,22 +7,26 @@ class Slider_Shortcode {
         add_action('wp_enqueue_scripts', [$this, 'enqueue_assets']);
     }
 
-    public function enqueue_assets() {
-        wp_register_style(
-            'sls-styles',
-            SLS_PLUGIN_URL . 'assets/css/sls-styles.css',
-            [],
-            SLS_PLUGIN_VERSION
-        );
+public function enqueue_assets() {
+    $css_version = filemtime(SLS_PLUGIN_PATH . 'assets/css/sls-styles.css');
+    $js_version = filemtime(SLS_PLUGIN_PATH . 'assets/js/sls-script.js');
 
-        wp_register_script(
-            'sls-script',
-            SLS_PLUGIN_URL . 'assets/js/sls-script.js',
-            [],
-            SLS_PLUGIN_VERSION,
-            true
-        );
-    }
+    wp_register_style(
+        'sls-styles',
+        SLS_PLUGIN_URL . 'assets/css/sls-styles.css',
+        [],
+        $css_version 
+    );
+
+    wp_register_script(
+        'sls-script',
+        SLS_PLUGIN_URL . 'assets/js/sls-script.js',
+        [],
+        $js_version, 
+        true
+    );
+}
+
 
     public function render_shortcode($atts) {
     wp_enqueue_style('sls-styles');
